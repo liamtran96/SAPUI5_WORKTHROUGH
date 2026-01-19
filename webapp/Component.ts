@@ -9,7 +9,8 @@ import ResourceModel from "sap/ui/model/resource/ResourceModel";
 */
 export default class Component extends UIComponent {
 public static metadata = {
-"interfaces": ["sap.ui.core.IAsyncContentCreation"]
+"interfaces": ["sap.ui.core.IAsyncContentCreation"],
+"manifest" : "json"
 };
     init(): void {
         // call the init function of the parent
