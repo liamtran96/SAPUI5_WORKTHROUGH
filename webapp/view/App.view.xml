@@ -10,4 +10,14 @@
       description="Hello {/recipient/name}"
       valueLiveUpdate="true"
       width="60%"/>
+      <Input
+      value="{/recipient/age}"
+      description=" {/recipient/age}"
+      valueLiveUpdate="true"
+      width="60%"/>
+      <Input
+      value="{/recipient/address}"
+      description=" {/recipient/address}"
+      valueLiveUpdate="true"
+      width="60%"/>
 </mvc:View>

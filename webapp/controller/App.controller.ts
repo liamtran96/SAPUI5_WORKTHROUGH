@@ -12,7 +12,9 @@ export default class AppController extends Controller {
       // set data model on view
       const data = {
          recipient: {
-            name: "World"
+            name: "Liam",
+            age: 23,
+            address: "thu duc"
          }
       };
       const dataModel = new JSONModel(data);
@@ -29,8 +31,11 @@ export default class AppController extends Controller {
    onShowHello(): void {
       // read msg from i18n model
       const recipient = (this.getView()?.getModel() as JSONModel)?.getProperty("/recipient/name");
+      const age = (this.getView()?.getModel() as JSONModel)?.getProperty("/recipient/age");
+      console.log("age", age)
+      const address = (this.getView()?.getModel() as JSONModel)?.getProperty("/recipient/address");
       const resourceBundle = (this.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
-      const msg = resourceBundle.getText("helloMsg", [recipient]) || "no text defined";
+      const msg = resourceBundle.getText("helloMsg", [recipient, age, address]) || "no text defined";
       // show message
       MessageToast.show(msg);
    }
