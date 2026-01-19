@@ -1,0 +1,23 @@
+{
+  "devDependencies": {
+    "@types/openui5": "^1.143.0",
+    "@ui5/cli": "^4.0.39",
+    "typescript": "^5.9.3",
+    "ui5-middleware-livereload": "^3.2.1",
+    "ui5-middleware-serveframework": "^3.7.1",
+    "ui5-tooling-transpile": "^3.10.1"
+  },
+  "name": "sapui5-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ui5 serve -o index.html",
+    "build": "ui5 build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
