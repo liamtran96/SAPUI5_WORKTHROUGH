@@ -4,6 +4,7 @@ import { SearchField$SearchEvent } from "sap/m/SearchField";
 import Filter from "sap/ui/model/Filter";
 import FilterOperator from "sap/ui/model/FilterOperator";
 import ListBinding from "sap/ui/model/ListBinding";
+import UIComponent from "sap/ui/core/UIComponent";
 
 /**
  * @namespace ui5.walkthrough.controller
@@ -14,6 +15,11 @@ export default class App extends Controller {
       currency: "EUR",
     });
     this.getView()?.setModel(viewModel, "view");
+  }
+
+  onPress(): void {
+    const router = UIComponent.getRouterFor(this);
+    router.navTo("detail");
   }
 
   onFilterInvoices(event: SearchField$SearchEvent): void {
