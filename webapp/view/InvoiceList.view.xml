@@ -2,12 +2,14 @@
     controllerName="ui5.walkthrough.controller.InvoiceList"
     xmlns="sap.m"
     xmlns:core="sap.ui.core"
-    xmlns:mvc="sap.ui.core.mvc">
+    xmlns:mvc="sap.ui.core.mvc"
+>
     <List
         headerText="{i18n>invoiceListTitle}"
         class="sapUiResponsiveMargin"
         width="auto"
-        items="{invoice>/Invoices}">
+        items="{invoice>/Invoices}"
+    >
         <items>
             <ObjectListItem
                 core:require="{
@@ -15,17 +17,27 @@
                 }"
                 title="{invoice>Quantity} x {invoice>ProductName}"
                 number="{
-                    parts: [
-                        'invoice>ExtendedPrice',
-                        'view>/currency'
-                    ],
+                    parts: ['invoice>ExtendedPrice', 'view>/currency'],
                     type: 'Currency',
                     formatOptions: {
                         showMeasure: false
                     }
                 }"
                 numberUnit="{view>/currency}"
-                numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }"/>
+                numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }"
+            >
+                <firstStatus>
+                    <ObjectStatus
+                        core:require="{
+                            Formatter: 'ui5/walkthrough/model/formatter'
+                        }"
+                        text="{
+                            path: 'invoice>Status',
+                            formatter: 'Formatter.statusText.bind($controller)'
+                        }"
+                    />
+                </firstStatus>
+            </ObjectListItem>
         </items>
     </List>
 </mvc:View>
