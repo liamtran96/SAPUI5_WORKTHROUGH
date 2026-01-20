@@ -1,3 +1,4 @@
+import type { SuiteConfiguration } from "sap/ui/test/starter/config";
 export default {
   name: "QUnit test suite for UI5 TypeScript Walkthrough",
   defaults: {
@@ -18,5 +19,8 @@ export default {
     "unit/unitTests": {
       title: "UI5 TypeScript Walkthrough - Unit Tests",
     },
+    "integration/opaTests": {
+      title: "UI5 TypeScript Walkthrough - Integration Tests",
+    },
   },
-};
+} satisfies SuiteConfiguration;
