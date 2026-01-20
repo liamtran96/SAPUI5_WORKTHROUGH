@@ -38,13 +38,17 @@
             "id": "app"
         },
         "resources": {
-	  "css": [
-		{
-		  "uri": "css/style.css"
-		}
-	  ]
-	},
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
         "models": {
+            "invoice": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "model/localInvoices.json"
+            },
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
