@@ -3,6 +3,7 @@
     "@types/openui5": "^1.143.0",
     "@ui5/cli": "^4.0.39",
     "@ui5/ts-interface-generator": "^0.10.5",
+    "local-web-server": "^5.4.0",
     "typescript": "^5.9.3",
     "ui5-middleware-livereload": "^3.2.1",
     "ui5-middleware-serveframework": "^3.7.1",
@@ -14,7 +15,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ui5 serve -o index.html"
+    "start": "ui5 serve -o index.html",
+    "build": "ui5 build --all --clean-dest",
+    "serve-dist": "ws --compress -d dist --open"
   },
   "keywords": [],
   "author": "",
