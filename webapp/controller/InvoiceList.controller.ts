@@ -39,15 +39,12 @@ export default class App extends Controller {
     // build filter array
     const filter = [];
     const query = event.getParameter("query");
-    console.log("event", event);
     if (query) {
       filter.push(new Filter("ProductName", FilterOperator.Contains, query));
     }
     // filter binding
     const list = this.byId("invoiceList");
-    console.log("list", list);
     const binding = list?.getBinding("items") as ListBinding;
-    console.log("binding", binding);
 
     binding?.filter(filter);
   }
