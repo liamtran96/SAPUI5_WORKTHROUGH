@@ -8,12 +8,18 @@ import ProductRating, {
 } from "../control/ProductRating";
 import ResourceBundle from "sap/base/i18n/ResourceBundle";
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
+import JSONModel from "sap/ui/model/json/JSONModel";
 
 /**
  * @namespace ui5.walkthrough.controller
  */
 export default class Detail extends Controller {
   onInit(): void {
+    const viewModel = new JSONModel({
+      currency: "EUR",
+    });
+    this.getView().setModel(viewModel, "view");
+    
     const router = UIComponent.getRouterFor(this);
     router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
   }
